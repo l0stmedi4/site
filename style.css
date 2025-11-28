@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #37ff0f; /* verde claro */
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  color: rgb(0, 0, 0);
+  background-image: url("img.jpg"); /* Imagem de fundo */
+background-repeat: no-repeat; /* Evita repetição da imagem */
+background-size: cover; /* Faz a imagem cobrir todo o fundo */
+background-position: center; /* Centraliza a imagem */
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+}
+
+/* estrelas */
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.5); }
+}
