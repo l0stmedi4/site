@@ -5,25 +5,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #37ff0f; /* verde claro */
+
+  /* imagem de fundo */
+  background: url("pnj.jpg") no-repeat center center fixed;
+  background-size: cover;
+
   overflow: hidden;
   font-family: "Poppins", sans-serif;
-  color: rgb(0, 0, 0);
-  background-image: url("img.jpg"); /* Imagem de fundo */
-background-repeat: no-repeat; /* Evita repetição da imagem */
-background-size: cover; /* Faz a imagem cobrir todo o fundo */
-background-position: center; /* Centraliza a imagem */
+  color: white;
 }
 
+/* fundo transparente do texto */
 .container {
   position: relative;
   z-index: 2;
   max-width: 500px;
   padding: 30px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.5); /* mais visível sobre a imagem */
   border-radius: 20px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
 }
 
 h1 {
@@ -36,7 +37,7 @@ p {
   line-height: 1.6em;
 }
 
-/* estrelas */
+/* estrelas brancas */
 .star {
   position: absolute;
   width: 3px;
