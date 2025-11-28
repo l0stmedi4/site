@@ -5,18 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>você</title>
 
-  <!-- Importando o CSS externo -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #c4e4d4;
+      margin: 0;
+      padding: 0;
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ESTRELAS VERDES */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #3fbf5b; /* verde */
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 1.8s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.6); }
+    }
+
+    .container {
+      padding: 40px 20px;
+      animation: fade 1.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .cover {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .player {
+      margin-top: 30px;
+    }
+
+    .player iframe {
+      width: 85%;
+      height: 350px;
+      max-width: 450px;
+      border-radius: 14px;
+      border: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+    }
+
+    .lyrics-box {
+      margin-top: 40px;
+      padding: 25px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 16px;
+      font-size: 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 600px) {
+      .player iframe {
+        width: 95%;
+        height: 300px;
+      }
+
+      .lyrics-box {
+        width: 90%;
+        font-size: 16px;
+        padding: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- ESTRELAS -->
+  <div class="stars">
+    <!-- 40 estrelas verdes aleatórias -->
+    <script>
+      for (let i = 0; i < 40; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() + "s";
+        document.querySelector(".stars").appendChild(star);
+      }
+    </script>
+  </div>
+
   <div class="container">
 
-    <!-- CAPA DA MÚSICA -->
     <img class="cover"
          src="https://i.scdn.co/image/ab67616d0000b273ce8c6140ee0408ad2731706e">
 
-    <!-- PLAYER DO SPOTIFY -->
     <div class="player">
       <iframe
         src="https://open.spotify.com/embed/track/0Z9iYTBz8UthFfNyJ4nemD?utm_source=generator"
@@ -24,19 +132,17 @@
       </iframe>
     </div>
 
-    <!-- TEXTO EMBAIXO DA MÚSICA -->
     <div class="lyrics-box">
-      Essa é a música que mais me lembra você.
+      Essa música sempre me lembra você — do jeito mais suave possível.
       <br><br>
-      Toda vez que essa música toca, eu penso em você.  
-      É como se cada parte dela me lembrasse um pouco do que eu sinto quando estou perto de você.  
-      Tem algo no jeito suave dela que parece o jeito que eu te olho, o jeito que eu sinto, o jeito que eu lembro de nós.
+      Tem algo no ritmo dela que parece com o jeito que penso em você.  
+      É estranho como algumas músicas viram pessoas…  
+      e essa acabou virando você.
       <br><br>
-      Eu não sei explicar, mas essa música virou você.  
-      E sempre que ela começa, meu pensamento corre direto pra você, como se fosse automático.
+      Quando ela toca, tudo em mim vai direto pra sua lembrança.
       <br><br>
-      É por isso que coloquei ela aqui…  
-      Pra você saber que, até nas músicas, eu ainda te encontro.
+      Por isso coloquei ela aqui.  
+      Pra você saber que, até na música, eu ainda te encontro.
     </div>
 
   </div>
